@@ -1,0 +1,106 @@
+.loader{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    display: grid;
+    place-items: center;
+}
+.loader__logo--container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10;
+}
+.loader__barras{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
+.loader__barra{
+    height: 100vh;
+    width: 100%;
+    background: $yellow-primary;
+    border-radius: 1px solid black;
+    display: grid;
+    place-items: center;
+}
+
+
+//* Animation
+.icon {
+    width: var(--size);
+    height: var(--size);
+    position: relative;
+    opacity: 0;
+  }
+  
+  .dot {
+    width: var(--size);
+    height: var(--size);
+    animation: dwl-dot-spin calc(var(--speed) * 5) infinite linear both;
+    animation-delay: calc(var(--i) * var(--speed) / (var(--dot-count) + 2) * -1);
+    rotate: calc(var(--i) * var(--spread) / (var(--dot-count) - 1));
+    position: absolute;
+  }
+  
+  .dot::before {
+    content: "";
+    display: block;
+    width: var(--dot-size);
+    height: var(--dot-size);
+    background-color: var(--color);
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    bottom: 0;
+    left: 50%;
+  }
+  
+  @keyframes dwl-dot-spin {
+    0% {
+      transform: rotate(0deg);
+      animation-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000);
+      opacity: 1;
+    }
+  
+    2% {
+      transform: rotate(20deg);
+      animation-timing-function: linear;
+      opacity: 1;
+    }
+  
+    30% {
+      transform: rotate(180deg);
+      animation-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+      opacity: 1;
+    }
+  
+    41% {
+      transform: rotate(380deg);
+      animation-timing-function: linear;
+      opacity: 1;
+    }
+  
+    69% {
+      transform: rotate(520deg);
+      animation-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+      opacity: 1;
+    }
+  
+    76% {
+      opacity: 1;
+    }
+  
+    76.1% {
+      opacity: 0;
+    }
+  
+    80% {
+      transform: rotate(720deg);
+    }
+  
+    100% {
+      opacity: 0;
+    }
+  }

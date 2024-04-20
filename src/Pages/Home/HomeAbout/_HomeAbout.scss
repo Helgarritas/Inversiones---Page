@@ -1,0 +1,29 @@
+.homeAbout{
+    height: 100vh;
+    padding: 130px;
+    display: flex;
+    align-items: center;
+    background: rgb(230, 123, 123);
+}
+.homeAbout__container{
+
+}
+.homeAbout__container--text{
+
+}
+.homeAbout__container--button{
+
+}
+.homeAbout__button{
+    padding: 0 0 0 10px;
+    position: relative;
+    &::before{
+        content: '';
+        height: 100%;
+        width: 1px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: $yellow-primary;
+    }
+}

@@ -1,0 +1,15 @@
+.homeBanner{
+    height: 100vh;
+    padding: 0 130px;
+    display: flex;
+    align-items: center;
+    background: gray;
+}
+.homeBanner__container{
+    & > :nth-child(1){
+        
+    }
+    & > :nth-child(2){
+
+    }
+}
