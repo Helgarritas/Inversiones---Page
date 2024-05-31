@@ -1,29 +1,73 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import { NavLink, Navigate} from 'react-router-dom';
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-// Data
+// Components
 import DataHomeServices from './DataHomeServices';
+import MouseCursor from '../../../Components/AnimationMouse/MouseCursor';
+import LoaderContext from '../../../Components/Loader/LoaderContext';
 
-function HomeServices(props) {
+// Image
+
+function HomeServices() {
+
+  const backgroundCardOver = (indice) =>{
+    const cardArray = document.querySelectorAll('.homeServices__card');
+    let a = indice
+    for(let i=0; i<cardArray.length ; i++){
+      if(a !== i){
+        cardArray[i].classList.add('homeServices__card--background');
+      } 
+    }
+  }
+
+  const backgroundCardOuts = (indice) =>{
+    const cardArray = document.querySelectorAll('.homeServices__card');
+    let a = indice
+    for(let i=0; i<cardArray.length ; i++){
+      if(a !== i){
+        cardArray[i].classList.remove('homeServices__card--background');
+      } 
+    }
+  }
+
+  //*Funcion para boolean Loader
+  let navigate = useNavigate();
+  const showLoader = useContext(LoaderContext);
+  const tiempoRestante = 1600; 
+
+  const delayLink = (e, path) => {
+    e.preventDefault();
+    showLoader(true);
+    setTimeout(() => {
+      navigate(path);
+    }, tiempoRestante);
+  };
 
   return (
     <>
       <section className='homeServices'>
         <article className='homeServices__container'>
-            <h2 className='homeServiices__title'>Our Services</h2>
-            <div className='homeServices__card'>
-                <div className='homeServices__card--animation'>
-                    img
-                </div>
-                <div className='homeServices__card--text'>
-                    <h3>Esto es un subtitulo</h3>
-                    <p>Esto es un testo para el subtitulo</p>
-                </div>
-                <a className='homeServices__card--link'>link</a>
-            </div>
+          {DataHomeServices.map((obj,indice) => (
+            <NavLink
+              onClick={(e) => { delayLink(e, obj.link); showLoader(); }}  
+              className='homeServices__card' 
+              onMouseOver={() => backgroundCardOver(indice)} 
+              onMouseOut ={() => backgroundCardOuts(indice)} 
+              key={obj.id}
+            >
+              <img className='homeServices__card--img' src={obj.image} alt='dads'/>
+              <h5 className='homeServices__card--title'>{obj.title}</h5>
+              <p className='homeServices__card--text homeServices__animation'>{obj.text}</p>
+              <span className='homeServices__card--line homeServices__animation'></span>
+              <span className='homeServices__card--numb homeServices__animation'>{obj.id}</span>
+            </NavLink>
+          ))}
         </article>
       </section>
     </>
-  )
+  );
 }
 
-export default HomeServices
+export default HomeServices;

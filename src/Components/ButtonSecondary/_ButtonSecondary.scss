@@ -1,0 +1,50 @@
+.button__secondary{
+    padding: 0 0 2px 0;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    position: relative;
+    border-bottom: 0.5px solid;
+    & > :nth-child(1){
+        font-weight: 500;
+    }
+    &:hover .button__secondary--slider{
+        transform: translate(-24px,24px);
+    }
+    &::before{
+        content: '';
+        width: 0%;
+        height: 1.02px;
+        position: absolute;
+        right: 0;
+        bottom: -2px;
+        transition: ease .4s;
+        background: white;
+        z-index: 99;
+    }
+    &:hover:before{
+        width: 100%;
+        left: 0;
+    }
+}
+.button__secondary--icons{
+    width: 24px;
+    height: 24px;
+    transition: background ease .3s;
+    position: relative;
+    overflow: hidden;
+}
+.button__secondary--slider{
+    position: absolute;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(2,24px);
+    grid-template-rows: repeat(2,24px);
+    transition: transform ease-out .3s;
+    & > :nth-child(1){
+        grid-area: 2/1/3/2;
+    }
+    & > :nth-child(2){
+        grid-area: 1/2/3/3;
+    }
+}

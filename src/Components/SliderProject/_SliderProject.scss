@@ -1,0 +1,66 @@
+.sliderProjects{
+    padding: 100px 0px 80px 130px ;
+    @media (min-width: 360px) and (max-width: 640px) {
+        padding: 100px 0px 80px 32px ;
+    }
+}
+.sliderProjects__container{
+    display: flex;
+    flex-direction: column;
+    // gap: 50px;
+}
+.sliderProjects__title{
+    margin-bottom: 40px;
+}
+.sliderProjects__slider{
+    width: 100%;
+    padding: 0 130px 0 0;
+    display: flex;
+    gap: 50px;
+    overflow-x: scroll ;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    transition: ease .3s;
+}
+.sliderProjects__card{
+    min-width: 300px;
+    height: 380px;
+    padding: 20px 26px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    scroll-snap-align: start;
+    scroll-snap-stop:always;
+    & > :nth-child(2){
+        color: $content-dark-primary;
+    }
+    & > :nth-child(2){
+        @include headline-regular(500);
+        color: $content-dark-primary;
+    }
+}
+.sliderProjects__image{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+// Buttons
+.sliderProjects__card--button{
+    padding: 4px;
+    position: absolute;
+    right: 26px;
+    border-radius: 50%;
+    transition: ease .3s;
+    background: rgba(255,255,255,0.2);
+    &:hover{
+        background: rgba(255,255,255,0.3);
+    }
+    &  .icon__stroke{
+        fill: white;
+    }
+}

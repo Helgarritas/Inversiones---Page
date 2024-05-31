@@ -1,29 +1,31 @@
 .homeAbout{
-    height: 100vh;
-    padding: 130px;
-    display: flex;
+    padding: 200px 100px;
+    display: grid;
+    grid-template-columns: 50% 50%;
     align-items: center;
-    background: rgb(230, 123, 123);
+    @media (min-width: 360px) and (max-width: 640px) {
+        padding: 200px 32px;
+        grid-template-columns: none;
+        text-align: center;
+
+    }
 }
 .homeAbout__container{
-
-}
+    grid-column: 2/3;
+    display: grid;
+    gap: 55px;
+    color: white;
+} 
 .homeAbout__container--text{
-
+    font-weight: 300;
+    letter-spacing: -0.4px;
 }
 .homeAbout__container--button{
-
-}
-.homeAbout__button{
-    padding: 0 0 0 10px;
-    position: relative;
-    &::before{
-        content: '';
-        height: 100%;
-        width: 1px;
-        position: absolute;
-        left: 0;
-        top: 0;
-        background: $yellow-primary;
+    display: flex;
+    gap: 40px;
+    & > .buttonStrong{
+        width: 100%;
+        gap: 100;
+        justify-content: space-between;
     }
 }

@@ -1,23 +1,50 @@
 .homeTeam{
-    height: 100vh;
-    padding: 0 130px;
+    padding: 80px 100px;
     display: flex;
-    align-items: center;
-    background: gray;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+    gap: 60px;
 }
-.homeTeam__container{
 
+.homeTeam__container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 .homeTeam__title{
-    
+    font-size: 36px;
+    color: white;
+    align-self: flex-start;
 }
 //* Card
 .homeTeam__card{
-
-}
+    width: 304px;
+    height: 374px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    position: relative;
+    transition: ease .8s;
+    overflow: hidden;
+}   
 .homeTeam__card--description{
-
+    & > :nth-child(1){
+        color: black;
+        font-size: 20px;
+        font-weight: 400;
+    }
+    & > :nth-child(2){
+        margin: -2px 0 10px 0;
+        color: black;
+    }
 }
-.homeTeam__card--social{
-
+.homeTeam__card--img{
+    position: absolute;
+    left: 0;
+    top: -1rem;
+    width: 100%;
+    filter: grayscale(100%);
+    z-index: -1;
 }

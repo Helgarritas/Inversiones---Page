@@ -1,20 +1,20 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React,{useState,useEffect} from 'react'
+
+// Components 
+import ButtonStrong from '../../../Components/ButtonStrong/ButtonStrong';
 
 function HomeAbout(props) {
+
+  const [setscroll, setSetscroll] = useState(0);
+  
   return (
     <>
       <section className='homeAbout'>
         <article className='homeAbout__container'>
-            <div className='homeAbout__container--text'>
-                <p>tminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat. Duis aute irure dolor in .tminim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in .</p>
-            </div>
-            <div className='homeAbout__container--button'>
-                <a className='homeAbout__button'>Revisar</a>
-                <a className='homeAbout__button'>Revisar</a>
-            </div>
+          <h5 className='homeAbout__container--text'>
+            Con más de 20 años de experiencia, en Inversiones nos destacamos como uno de los líderes en la industria. Especializados en diversos campos del sector, nuestro compromiso con la calidad y la seguridad es inquebrantable.
+            Nuestra misión es entregar resultados que superen las expectativas de nuestros clientes en cada proyecto. Siempre aspirando a ser reconocidos como uno de los mejores contratistas del Perú, estableciendo un estándar de excelencia en cada tarea que emprendemos.
+          </h5>
         </article>
       </section>
     </>

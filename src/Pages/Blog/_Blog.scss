@@ -1,0 +1,96 @@
+.blogNotice{
+    padding: 130px 130px;
+    background: #F5F7FA;
+    @media screen and (max-width:600px){
+        padding: 120px 20px 80px 20px;        
+    }
+}
+.blogNotice__container{
+    display: flex;
+    @media screen and (max-width:600px){
+        flex-direction: column;
+        gap: 80px;
+    }   
+}
+.blogNotice__notice{
+    width: 50%;
+    z-index: 0;
+    & > :nth-child(1){
+        color: $content-light-secondary;
+    }
+    & > :nth-child(2){
+        margin-top: 20px;
+        @include body-regular;
+        color: $content-light-terceary;
+    }
+    & > :nth-child(3){
+        margin-top: 28px;
+        width: 100%;
+        height: 400px;
+    }
+    & > :nth-child(4){
+        margin: 24px 0;
+        @include headline-regular(300);
+        color: $content-light-primary;
+    }   
+    & svg{
+        width: 24px;
+        height: 24px;
+        
+    }
+    & .dataIcons__stroke{
+        stroke-width: 1;
+    }
+    @media screen and (max-width:600px){
+        width: 100%;
+    }
+}
+
+
+//* Portada
+.blogNotice__section{
+    margin: 0 0 0 auto;
+    justify-self: baseline;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    & > p{
+        @include headline-regular(400);
+        color: $content-light-primary;
+        margin-bottom: 20px;
+    }
+}
+.blogNotice__section--container{
+    cursor: pointer;
+    width: 400px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2,50%);
+    grid-template-rows: 150px;
+    @media screen and (max-width:600px){
+    }
+}
+.blogNotice__portada--image{
+    height: 100%;
+    width: 100%;
+}
+.blogNotice__content{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    & > :nth-child(1){
+        @include footnote-regular;
+        color: $content-light-terceary;
+        // color: red;
+    }
+    & > :nth-child(2){
+        margin-top: 5px;
+        @include bodylarge-medium(500);
+        color: $content-light-secondary;
+    }
+    & > :nth-child(3){
+        @include bodylarge-regular;
+        color: $content-light-secondary;
+    }
+}

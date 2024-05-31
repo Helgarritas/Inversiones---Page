@@ -1,0 +1,88 @@
+.inforProject{
+    padding: 130px 130px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    transition: ease .4s;
+    backdrop-filter: blur(10px);
+    // opacity: 0;
+    & *{
+        color: black;
+    }
+}
+.inforProject__title{
+    margin-top: 30px;
+}
+.inforProject__container{
+    padding: 50px 80px;
+    background: #F5F7FA;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    transition: ease .4s;
+}
+.inforProject__delete{
+    margin: -30px -60px 0 0;
+    position:sticky;
+    top: 0px;
+    width: min-content;
+    height: fit-content;
+    margin-left: auto;
+    display: flex;
+    padding: 7px;
+    border-radius: 50%;
+    background: $color-terceary;
+    border: 1px solid #F5F7FA;
+    & .icon__stroke{
+        fill: #F5F7FA;
+    }
+}
+.inforProject__content{
+    & > :nth-child(1){
+        margin-top: 10px;
+    }
+    & > :nth-child(2){
+        margin-top: 40px;
+        width: 100%;
+        height: 450px;
+    }
+}   
+.inforProject__content2{
+    margin: 90px 0;
+    display: grid;
+    gap: 36px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 450px;
+    & *{
+        color: $content-light-primary;
+    }
+    & > :nth-child(1){
+        width: 100%;
+        height: 100%;
+    }
+    & > :nth-child(2){
+        padding: 20px 0;
+    }
+}
+.inforProject__content3{
+
+}
+.inforProject__group--image{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    & img{
+        height: 380px;
+    }
+}
+//* Style event
+// Idea de colocar en animacion
+.inforProject__event1{
+    backdrop-filter: blur(0px);
+}
+.inforProject__event2{
+    opacity: 0;
+}

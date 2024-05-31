@@ -1,6 +1,7 @@
-import React from 'react'
-import { createContext } from 'react'
+import React from 'react';
+import { createContext } from 'react';
 
-const LoaderContext = React.createContext()
+const LoaderContext = React.createContext();
 
-export default LoaderContext
+
+export default LoaderContext;

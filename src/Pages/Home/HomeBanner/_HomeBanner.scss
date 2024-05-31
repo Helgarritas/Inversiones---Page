@@ -1,15 +1,109 @@
 .homeBanner{
     height: 100vh;
-    padding: 0 130px;
+    padding: 0 100px;
     display: flex;
     align-items: center;
-    background: gray;
+    position: relative;
+    color: white;
+    overflow: hidden;
+    @media (min-width: 360px) and (max-width: 640px) {
+        padding: 0 32px;
+    }
 }
-.homeBanner__container{
+.homeBanner__background{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; 
+    position: absolute;
+    left:0;
+    top: 0;
+    object-fit: cover;
+    transform: scaleX(-1);
+    z-index: -1;
+}
+.homeBanner__title{
+    display: flex;
+    flex-direction: column;
+    gap: -20px;
+
     & > :nth-child(1){
         
     }
+    & > :nth-child(3){
+        margin-top: -14px;
+    }
+}
+// Button
+.homebanner__button{
+    padding: 10px 40px;
+    width: max-content;
+    border: 1.6px solid white;
+    @include headline-regular(350);
+    position: relative;
+    transition: color ease .3s,border .4s;
+    &:hover::before{
+        height: 100%;
+    }
+    &:hover{
+        color: $content-light-primary;
+        border: 1.6px solid $yellow-primary;
+    }
+    &::before{
+        content:'';
+        width: 100%;
+        height: 0%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transition: ease .3s;
+        background: $yellow-primary;
+        z-index: -1;
+    }
+}
+.homeBanner__container{
+    width: min-content;
+    & > :nth-child(1){
+    }
     & > :nth-child(2){
+        margin: 36px 0 50px 0;
+    }
+}
+.homeBanner__title--slider{
+    display: flex;
+    gap: 14px;
+    height: var(--slider-height);
+    overflow: hidden;
+}
+.homeBanner__title--sliders{
+    display: grid;
+    animation: sliderInfinite 12s ease-in-out infinite;
+    & h1{
+        width: max-content;
+        color: $yellow-primary;
+    }
+}
+.homeBanner__title--sliders {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: sliderInfinite 6s ease-in-out infinite;
+    h1 {
+        color: $yellow-primary;
+    }
+}
 
+@keyframes sliderInfinite {
+    0% {
+        transform: translateY(0);
+    }
+    33.33% {
+        transform: translateY(-94px); /* 1 slide width */
+    }
+    66.66% {
+        transform: translateY(-188px); /* 2 slides width */
+    }
+    100% {
+        transform: translateY(-282px); /* 3 slides width */
     }
 }

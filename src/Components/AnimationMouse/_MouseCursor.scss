@@ -1,0 +1,33 @@
+.mouseCursor{
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 3px dotted $yellow-primary;
+    border-radius: 50%;
+    transition: translate 0.06s, transform .4s;
+    pointer-events: none;
+    z-index: 100;
+    & > p{
+        color: white;
+    }
+}
+.mouseCursor__inner{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: $yellow-primary;
+    border-radius: 50%;
+}
+.service__opacity-mouse{
+    opacity: 1;
+    scale: 1;
+}
+.service__scale-mouse{
+    transform: scale(.7);
+    // transition: ease .8s;
+}

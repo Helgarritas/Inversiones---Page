@@ -1,0 +1,42 @@
+.solutionsBanner{
+    height: 100vh;
+    padding: 0 100px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: white;
+    overflow: hidden;
+    @media (min-width: 360px) and (max-width: 640px) {
+        padding: 0 32px;
+    }
+}
+.solutionsBanner__background{
+    width: 100%;
+    // object-fit:cover;
+    position: absolute;
+    left:0;
+    top: 0;
+    z-index: -1;
+    mask-image: linear-gradient(
+        to left,
+        black 70%,
+        transparent 
+    );
+}
+.solutionsBanner__container{
+    width: min-content;
+    @media (min-width: 360px) and (max-width: 640px) {
+        width: 100%;
+    }
+    & > :nth-child(1){
+        min-width: max-content;
+    }
+    & > :nth-child(2){
+        width: 30rem;
+        margin: 20px 0 50px 0;
+        @media (min-width: 360px) and (max-width: 640px) {
+            width: 100%;
+            margin: 20px 0 0 0;
+        }
+    }
+}

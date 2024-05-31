@@ -1,0 +1,101 @@
+.footer{
+    padding: 70px 100px 32px 100px;
+    display: flex;
+    align-items: center;
+    color: white;
+    @media (min-width: 360px) and (max-width: 640px) {
+        padding: 70px 32px 50px 32px;
+    }
+}
+.footer__container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+//* Title
+.footer__title{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    & > :nth-child(1){
+        font-size: 48px;
+        line-height: 60px;
+    } 
+}
+.footer__button{
+}
+
+//* Description
+.footer__description{
+    display: flex;
+    justify-content: space-between;
+    @media (min-width: 360px) and (max-width: 640px) {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+}
+.footer__media--container{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+// links
+.footer__links--container{
+    display: flex;
+    justify-content: space-between;
+    gap: 120px;
+    @media (min-width: 360px) and (max-width: 640px) {
+        gap: 0;
+    }
+}
+.footer__media{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    & > svg{
+        width: 22px;
+        height: 22px;
+    }
+    & > :nth-child(2){
+        cursor: none;
+        @media (min-width: 360px) and (max-width: 640px) {
+            @include body-regular;
+        }
+    }
+}
+.footer__links{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    font-weight: 300;
+    font-size: 18px;
+    cursor: none;
+    & > :nth-child(1){
+        font-weight:400;
+    }
+    & > :nth-child(n+2):nth-child(-n+4){ 
+        @media (min-width: 360px) and (max-width: 640px) {
+            @include body-regular;
+            color: $content-dark-secondary;
+        }
+    }
+}
+.footer__social{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    & > :nth-child(1){
+        font-weight: 400;
+        font-size: 18px;
+    }
+}
+
+.footer__law{
+    display: flex;
+    justify-content: space-between;
+    & > p{
+        font-size: 18px;
+    }
+}

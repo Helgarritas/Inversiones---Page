@@ -1,0 +1,20 @@
+.purpose{
+    padding: 70px 100px;
+    display: flex;
+    justify-content: center;
+}
+.puerpose__container{
+    position: relative;
+    display: flex;
+}
+.purpose__background{
+    opacity: 0.9;
+    mask-image: linear-gradient(
+        to left, black 30%, transparent 
+    );
+}
+.purpose__description{
+    margin: 3rem 0 0 0;
+    font-size: 40px;
+    line-height: 52px;
+}

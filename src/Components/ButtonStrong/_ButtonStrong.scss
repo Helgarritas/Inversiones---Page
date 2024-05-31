@@ -1,0 +1,30 @@
+.button__primary{
+  padding: 0 0 2px 0;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  position: relative;
+  & > :nth-child(1){
+    @include bodylarge-medium(400);
+  }
+}
+.button__primary--icons{
+  width: 24px;
+  height: 24px;
+  transition: background ease .3s;
+  position: relative;
+  overflow: hidden;
+}
+.button__primary--slider{
+  position: absolute;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(2,24px);
+  transition: transform ease-out .3s;
+  & > :nth-child(1){
+      grid-area: 1/1/2/2;
+  }
+  & > :nth-child(2){
+      grid-area: 1/2/2/3;
+  }
+}

@@ -1,0 +1,37 @@
+.aboutBanner{
+    height: 100vh;
+    padding: 0 100px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: white;
+    overflow: hidden;
+    @media screen and (max-width: 768px){
+        padding: 0 32px;
+    }
+}
+.aboutBanner__background{
+    width: 100%;
+    position: absolute;
+    left:0;
+    top: 0;
+    z-index: -1;
+    mask-image: linear-gradient(
+        to left,
+        black 60%,
+        transparent 
+
+    );
+}
+.aboutBanner__container{
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    & > :nth-child(1){
+        width: max-content;
+    }
+    & > :nth-child(2){
+        width: 120%;
+        margin: 20px 0 50px 0;
+    }
+}

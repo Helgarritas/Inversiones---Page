@@ -1,0 +1,15 @@
+.homeSlider{
+    // padding: 70px 0;
+}
+.homeSlider__container{
+    padding: 40px 0;
+    // background: $yellow-primary;
+}
+.homeSlider__description{
+    color: $content-dark-primary;
+    font-size: 56px;
+    font-weight: 500;
+}
+.homeSlider__card:nth-of-type(even) p{
+    color: $content-dark-secondary;
+}

@@ -1,0 +1,38 @@
+.team{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+//* Card
+.team__card{
+    width: 304px;
+    height: 374px;
+    // width: 294px;
+    // height: 364px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    position: relative;
+    transition: ease .8s;
+    overflow: hidden;
+}   
+.team__card--description{
+    & > :nth-child(1){
+        font-size: 18px;
+        font-weight: 500;
+    }
+    & > :nth-child(2){
+        font-size: 18px;
+        margin: -2px 0 11px 0;
+    }
+}
+.team__card--img{
+    position: absolute;
+    left: 0;
+    height: 100%;
+    top: -1rem;
+    width: 100%;
+    filter: grayscale(100%);
+    z-index: -1;
+}

@@ -1,23 +1,34 @@
 .nav{
-    height: 88px;
     width: 100%;
-    padding: 0 130px;
+    padding:0 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: $content-dark-primary;
     position: fixed;
-    background: black;
+    z-index: 99;
     @media screen and (max-width: 768px){
         padding: 0 32px;
     }
+    &::before{
+        content: '';
+        width: 100%;
+        height: 0%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: ease .6s;
+        background: black;
+        z-index: -1;
+    }
+}
+.nav.active::before{
+    height: 100%;
 }
 //*Logo
 .nav__container--logo{
-
 }
 .nav__logo{
-
 }
 //* Links
 .nav__container--link{
@@ -35,71 +46,104 @@
         background-color: black;
     }
 }
-.nav__sub--link{
-
+.nav__container--link > :nth-child(1) > :nth-child(2){
+    padding: 0;
 }
-//* Button Menu
-.nav__cona¿tainer--button{
-    display: none;
-    @media screen and (max-width: 768px){
-        display: inline-block;
+.nav__container--link > :nth-child(4) > :nth-child(2){
+    padding: 0;
+}
+.nav__container--link > :nth-child(3) > :nth-child(2){
+}
+.nav__link{
+    position: relative;
+    &:hover::before{
+        left: 0;
+        width: 100%;
+    }
+    &::before{
+        content: '';
+        width: 0%;
+        height: 0.5px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transition: ease .4s;
+        background: white;
     }
 }
-#checkbox {
-    display: none;
-}
-
-.toggle {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
+.nav__lenguages{
+    margin-left: 20px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 5px;
-    transition-duration: .5s;
+    gap: 10px;
 }
-
-.bars {
-    width: 70%;
-    height: 2px;
-    background-color: $content-dark-primary;
-    border-radius: 4px;
+.nav__link--animation{
+    transition: ease .35s;
+    transition-delay: .4s;
 }
-
-#bar2 {
-    transition-duration: .4s;
+.navLinks__animation{
+    transition: ease .35s;
+    transition-delay: 0s;
+    opacity: 0;
 }
-
-#bar1,#bar3 {
-    width: 50%;
-}
-
-#checkbox:checked + .toggle .bars {
+//* Sub link
+.nav__sub--container{
+    position: relative;
+    & > :nth-child(1){
+        height: 80px;
+        display: flex;
+        align-items: center;
+    }
+}   
+.nav__sub--link{
+    width: 188px;
+    padding: 24px 26px;
+    min-width: max-content;
+    display: grid;
+    gap: 12px;
     position: absolute;
-    transition-duration: .5s;
+    top: 76px;
+    left: -26px;
+    opacity: 0;
+    background: $color-terceary;
+    transition: height ease .4s,opacity ease .4s;
+    overflow: hidden;
+    & a{
+        color: $content-dark-secondary;
+        transition: color ease .3s;
+    }
+    & a:hover{
+        color: $content-dark-primary;
+    }
 }
-
-#checkbox:checked + .toggle #bar2 {
-    transform: scaleX(0);
-    transition-duration: .5s;
+//* Button action
+.hamburguer{
+    padding: 13px 10px;
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 99;
+    @media screen and (max-width: 768px){
+        display: flex;
+    }
 }
-
-#checkbox:checked + .toggle #bar1 {
-    width: 65%;
-    transform: rotate(45deg);
-    transition-duration: .5s;
+.hamburguer__line{
+    width: 24px;
+    height: 2px;
+    border-radius: 100px;
+    transition: ease-out .3s;
+    background: white;
 }
-
-#checkbox:checked + .toggle #bar3 {
-    width: 65%;
-    transform: rotate(-45deg);
-    transition-duration: .5s;
+// Animation
+.transform__line .hamburguer__line1{
+    transform: rotate(45deg) translate(5.5px,5.5px);
+    width: 24.5px;
 }
-
-#checkbox:checked + .toggle {
-    transition-duration: .5s;
-    transform: rotate(180deg);
+.transform__line .hamburguer__line2{
+    transform: translateX(-100%);
+    opacity: 0;
+}
+.transform__line .hamburguer__line3{
+    transform: rotate(-45deg) translate(5.5px,-5.5px);
+    width: 24.5px;
 }

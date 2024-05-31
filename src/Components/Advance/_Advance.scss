@@ -1,0 +1,38 @@
+.counter{
+    margin: 40px 0;
+    padding: 70px 130px;
+    background: $color-terceary;
+    @media (min-width: 360px) and (max-width: 640px) {
+        padding: 70px 32px;
+    }
+}
+.counter__container{
+    display: flex;
+    justify-content: space-between;
+    @media (min-width: 360px) and (max-width: 640px) {
+        flex-wrap: wrap;
+        gap: 60px;
+    }
+}
+.counter__card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    & > :nth-child(1){
+        font-size: 56px;
+        font-weight: 500;        
+    }
+    & > :nth-child(2){
+        @media (min-width: 360px) and (max-width: 640px) {
+            @include bodylarge-regular;
+        }
+    }
+}
+.counter__card--num{
+    & > span{
+        font-size: 40px;
+        font-weight: 500;    
+    }
+}

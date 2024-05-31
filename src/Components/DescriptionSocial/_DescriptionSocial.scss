@@ -1,0 +1,16 @@
+.dataIcons__stroke{
+    transition: stroke ease .3s;
+}
+.iconsMedia{
+    display: flex;
+    gap: 12px;
+    & svg{ // svg
+        width: 20px;
+        height: 20px;
+        fill: none;
+        transition: background ease .4s;
+        border-radius: 3px;
+    }
+}   
+
+//* Funcion para distribuir los colores en cada escenario

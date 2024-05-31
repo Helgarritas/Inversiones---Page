@@ -1,23 +1,103 @@
 .homeBlog{
-    height: 100vh;
-    padding: 0 130px;
+    padding: 70px 100px 90px 100px;
     display: flex;
-    align-items: center;
-    background: rgb(215, 255, 171);
+    flex-direction: column;
+    gap: 34px;
+    background: white;
+    overflow: hidden;
+    @media (min-width: 360px) and (max-width: 640px) {
+        padding: 70px 0 70px 32px;
+    }
 }
 .homeBlog__container{
-
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    justify-content: end;
+    @media (min-width: 360px) and (max-width: 640px) {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
 }
 .homeBlog__title{
-
+    color: $content-light-primary
 }
-//* Card
+
+//* Description
+.homeBlog__description{
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+    & > :nth-child(1){
+        color: $content-light-primary;        
+    }
+}
+.homeBlog__description .button__secondary{
+    &::before{
+        background: black;
+    }
+}
+//* Cards
+.homeBlog__slider{
+    margin-left: auto;
+    display: flex;
+    gap: 30px;
+    @media (min-width: 360px) and (max-width: 640px) {
+        padding: 70px 80px 70px 32px;
+        margin: 0;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+    }
+}
+// Card
 .homeBlog__card{
+    padding: 22px 26px;
+    width: 280px;
+    height: 460px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media (min-width: 360px) and (max-width: 640px) {
+        min-width: 280px;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+    &:hover .button__primary--slider{
+        transform: translate(-24px,0);
+    }
+    &:hover .homeBlog__card--img{
+        transform: scale(1.012);
+    }
+}
+.homeBlog__card--img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: ease .8s;
 
 }
-.homeBlog__card--description{
-
+.homeBlog__card--text{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 1;
 }
-.homeBlog__card--social{
-
+.homeBlog__date{
+    display: flex;
+    gap: 8px;
+    & > :nth-child(1){
+        font-size: 18px;
+        color: $content-dark-secondary;
+    }
+    & > :nth-child(2){
+        font-size: 18px;
+        color: $content-dark-secondary;
+    }
+}
+.homeBlog__card--title{
+    font-size: 24px;
+    font-weight: 400;
 }

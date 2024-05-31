@@ -1,48 +1,61 @@
-import { useEffect,useState,useCallback } from 'react'
+import { useEffect,useState,useCallback } from 'react';
+import { Routes,Route,useNavigate } from 'react-router-dom';
 import './App.scss'
 
-// Components
-import Loader from './Components/Loader/Loader';
+
+// Pages
 import BarNav from './Components/BarNav/BarNav';
 import Footer from './Components/Footer/Footer';
-// Pages
-import HomeBanner   from './Pages/Home/HomeBanner/HomeBanner';
-import HomeAbout    from './Pages/Home/HomeAbout/HomeAbout';
-import HomeServices from './Pages/Home/HomeServices/HomeServices';
-import HomeProjects from './Pages/Home/HomeProjects/HomeProjects';
-import HomeTeam     from './Pages/Home/HomeTeam/HomeTeam';
-import HomeOpinion  from './Pages/Home/HomeOpinion/HomeOpinion';
-import HomeBlog     from './Pages/Home/HomeBlog/HomeBlog';
 import LoaderContext from './Components/Loader/LoaderContext';
 
-function App() {
-  const [booleanLoader, setBooleanLoader] = useState(true)
+// Components
+import MouseCursor from './Components/AnimationMouse/MouseCursor';
+import ScrollTo from './Components/ScrollTo/ScrollTo';
+import Loader from './Components/Loader/Loader';
 
-  // useEffect(()=>{
-  //   setTimeout(()=>{
-  //     if(booleanLoader) return setBooleanLoader(false);
-  //   },1900)
-  // },[booleanLoader])
+// Pages
+import Home from './Pages/Home/Home';
+import About from './Pages/About/About';
+import Solutions from './Pages/Solutions/Solutions';
+import Project from './Pages/Project/Project';
+import Blog from './Pages/Blog/Blog';
+
+function App({animationMouse}) {
+  const [booleanLoader, setBooleanLoader] = useState(true)
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+    // Function for animation mouse
+    animationMouse();
+    // Function booleanLoader change false later animation.
+    setTimeout(()=>{
+      if(booleanLoader) return setBooleanLoader(false);
+    },3200)
+  },[booleanLoader])
 
   const showLoader = useCallback(()=>{
     setBooleanLoader(true)
-    setTimeout(()=>{setBooleanLoader(false)},1900)
-  },[])
+    setTimeout(()=>{setBooleanLoader(false)},3200)
+  },[animationMouse])
 
   return (
     <>
-      <LoaderContext.Provider value={showLoader}>
-        {booleanLoader && <Loader/>}
-        <BarNav></BarNav>
-        <HomeBanner></HomeBanner>
-        <HomeAbout></HomeAbout>
-        <HomeServices></HomeServices>
-        <HomeProjects></HomeProjects>
-        <HomeTeam></HomeTeam>
-        <HomeOpinion></HomeOpinion>
-        <HomeBlog></HomeBlog>
-        <Footer></Footer>
-      </LoaderContext.Provider>
+      <div className='mouse__animation--scope'>
+        <LoaderContext.Provider value={showLoader}>
+          {booleanLoader && <Loader booleanLoader={booleanLoader}/>}
+          <MouseCursor></MouseCursor>
+          <ScrollTo></ScrollTo>
+          <BarNav showLoader={showLoader}></BarNav>
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/about" element={<About/>}/>
+            <Route path="/solution/:solutionId" element={<Solutions/>}/>
+            <Route path="/project" element={<Project/>}/>
+            <Route path="/blog/:blogId" element={<Blog/>}/>
+          </Routes>
+          <Footer showLoader={showLoader}></Footer>
+        </LoaderContext.Provider>
+      </div>
     </>
   )
 }

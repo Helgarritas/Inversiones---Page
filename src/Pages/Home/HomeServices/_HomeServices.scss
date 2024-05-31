@@ -1,24 +1,116 @@
 .homeServices{
-    height: 100vh;
-    padding: 0 130px;
-    background: blue;
+    padding: 70px 100px 100px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    @media (min-width: 360px) and (max-width: 640px) {
+        padding: 70px 0 70px 32px;
+    }
 }
 .homeServices__container{
-
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 30px;
+    position: relative;
+    @media (min-width: 360px) and (max-width: 640px) {
+        padding: 0 32px 0 0;
+        overflow-x: scroll;
+        overflow-y: none;
+        scrollbar-width: none;
+        scroll-snap-type: x mandatory;
+    }
 }
-.homeServiices__title{
-    
-}   
 //* Card
 .homeServices__card{
-    border-radius: .5px solid white;
+    padding: 0 0px;
+    width: 310px;
+    height: 580px;
+    display: grid;
+    grid-template-rows: repeat(7,1fr);
+    place-items: center;
+    color: white;
+    position: relative;
+    transition: ease .3s;
+    @media (min-width: 360px) and (max-width: 640px) {
+        padding: 0 0px;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+    &:hover .homeServices__card--img{
+        scale: 1.01;
+    }
+    &::before{
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: ease .6s;
+        background: rgba(0,0,0,0.3);
+    }
+    &.homeServices__card--background::before{
+        opacity: 1;
+    }
+    // hover Animation text
+    &:hover  .homeServices__animation{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    &:hover .homeServices__card--numb{
+        transition: .4s;
+        background-position: 0%;
+        background-image: linear-gradient(rgba(255,255,255,1) 30%, rgba(0,0,0,0) 100%);
+        transition-delay: .3s;
+    }
+    &:hover .homeServices__card--img{
+        transition: ease .8s;
+    }
 }
-.homeServices__card--animation{
 
+// Elements content
+.homeServices__card--title{
+    text-align: center;
+    grid-area: 4/1/5/2;
 }
 .homeServices__card--text{
-
+    grid-area: 5/1/6/2;
+    @include bodylarge-regular;
+    color: rgba(255,255,255,0.9);
+    text-align: center;
 }
-.homeServices__card--link{
+.homeServices__card--line{
+    grid-area: 6/1/7/2;
+    width: 1px;
+    height: 20px;
+    background: white;
+}
+.homeServices__card--numb {
+    position: absolute;
+    bottom: -3rem;
+    font-size: 100px;
+    background-clip: text;
+    background-image: linear-gradient(rgba(255,255,255,1) 0%, rgba(0,0,0,0) 100%);
+    color: transparent;
+    background-size: 100% 300%;
+    background-position: 0% 100%;
+}
+.homeServices__animation{
+    transition: ease-out .6s;
+    transform: translateY(1rem);
+    opacity: 0;
+}
 
+// elements image
+.homeServices__card--img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: scale ease 1.2s;
+    z-index: -2;
 }

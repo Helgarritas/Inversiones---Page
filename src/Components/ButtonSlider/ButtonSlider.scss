@@ -1,0 +1,29 @@
+.buttonSlider__action{
+    margin-left: auto;
+    padding: 35px 130px 0  0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (min-width: 360px) and (max-width: 640px) {
+        padding: 35px 32px 0  0;
+    }
+}
+.buttonSlider__buttons{
+    display: flex;
+    gap: 20px; 
+}
+.buttonSlider__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    transition: ease .3s;
+    &:hover{
+        background: rgba(255,255,255,0.25);
+    }
+    & .icon__stroke{
+        fill: white;
+    }
+}
