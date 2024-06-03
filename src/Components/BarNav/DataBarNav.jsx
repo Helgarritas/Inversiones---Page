@@ -9,7 +9,7 @@ const DataBarNav = [
     subs: []
   },
   {id:2,
-    link: '/solution/mineriaSubterranea',
+    link: '',
     description: 'Soluciones',
     subs: [
       {

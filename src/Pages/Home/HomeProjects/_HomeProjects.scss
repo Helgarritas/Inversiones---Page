@@ -7,7 +7,7 @@
     overflow: hidden;
     background: #121213;
     @media (min-width: 360px) and (max-width: 640px) {
-        padding: 100px 32px;
+        padding: 100px 16px;
         flex-direction: column;
     }
 }
@@ -38,13 +38,22 @@
 //* Description
 .homeProjects__title{
     color: white;
-    line-height: 68px;
 }
 .homeProjects__description{
     max-width: 370px;
     display: flex;
     flex-direction: column;
-    gap: 42px;
+    gap: 30px;
+    & > :nth-child(2){
+        margin-bottom: 30px;
+        @media (min-width: 360px) and (max-width: 640px) {
+            margin-bottom: 30px;
+        }    
+    }
+    @media (min-width: 360px) and (max-width: 640px) {
+        gap: 20px;
+        padding-bottom: 25px;
+    }
 }
 
 //* Cards
@@ -52,12 +61,12 @@
     display: grid;
     justify-content: space-between;
     gap: 20px;
+    column-gap: 20px;
     grid-template-areas: 
     'a b '
     'c c';
 }
 .homeProjects__card{
-    width: 400px;
     height: 250px;
     padding: 12px 18px;
     display: grid;
@@ -66,35 +75,56 @@
     transition: ease .8s;
     overflow: hidden;
     @media (min-width: 360px) and (max-width: 640px) {
-        width: 100%;
+        padding: 12px 10px;
         height: 200px;
     }
 }
 .homeProjects__card:nth-child(1){
+    aspect-ratio: 4/3;
     grid-area: a;
+    @media (min-width: 360px) and (max-width: 640px) {
+        width: 100%;
+        // aspect-ratio: 3/4;
+    }
 }
 .homeProjects__card:nth-child(2){
+    aspect-ratio: 4/3;
     grid-area: b;
+    @media (min-width: 360px) and (max-width: 640px) {
+        width: 100%;
+        // aspect-ratio: 3/4;
+    }
 }
 .homeProjects__card:nth-child(3){
     width: 100%;
     grid-area: c;
 }
 .homeProjects__card--image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
 }
+
 .homeProjects__card--content{
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1;
+    @media (min-width: 360px) and (max-width: 640px) {
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+    }
     & > :nth-child(1){
-        font-size: 28px;
+        @include upline(600);
         color: white;
+        @media (min-width: 360px) and (max-width: 640px) {
+            @include bodylarge-medium(500);
+        }
     }
 }
 .homeProjects__card--height{
@@ -103,10 +133,18 @@
     gap: 4px;
     & > :nth-child(1){
         font-size: var(--size);
-        font-weight: 500;        
+        font-weight: 500;   
+        @media (min-width: 360px) and (max-width: 640px) {
+            @include body-regular;
+            color: $content-dark-secondary;
+        }     
     }
     & > :nth-child(2){
         font-size: 16px;
-        font-weight: 500;  
+        font-weight: 500;
+        @media (min-width: 360px) and (max-width: 640px) {
+            @include body-regular;
+            color: $content-dark-secondary;
+        }  
     }
 }

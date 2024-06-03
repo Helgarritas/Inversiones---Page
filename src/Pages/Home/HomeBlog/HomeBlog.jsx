@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { NavLink,useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 // Components
@@ -6,10 +6,16 @@ import DataHomeBlog from './DataHomeBlog';
 import ButtonSecondary from '../../../Components/ButtonSecondary/ButtonSecondary';
 import ButtonStrong from '../../../Components/ButtonStrong/ButtonStrong';
 import LoaderContext from '../../../Components/Loader/LoaderContext';
+import MouseCursor from '../../../Components/AnimationMouse/MouseCursor';
+
 // Image
 
 
-function HomeBlog(props) {
+function HomeBlog({animationMouse}) {
+
+  useEffect(() => {
+    animationMouse();
+  }, [animationMouse]);
 
   //* chance boolean Loader
   let navigate = useNavigate();
@@ -23,7 +29,7 @@ function HomeBlog(props) {
       navigate(path);
     }, tiempoRestante);
   };
-
+  
   return (
     <>
       <section className='homeBlog'>
@@ -33,12 +39,12 @@ function HomeBlog(props) {
             <p>Explora nuestro blog donde compartimos ideas, consejos y tendencias relevantes acerca de la industria.</p>
             <ButtonSecondary description={'Descubrir'} fill={'black'} link={'/blog/1'}></ButtonSecondary>
           </div>
-          <div className='homeBlog__slider'>
+          <div className='homeBlog__slider mouse__animation--scope'>
             {DataHomeBlog.map((obj)=>(
               <NavLink 
                 onClick={(e) => { delayLink(e, obj.link); showLoader(); }}  
                 className='homeBlog__card' key={obj.id}
-              >
+                >
                 <img className='homeBlog__card--img' src={obj.image} alt="" />
                 <div className='homeBlog__card--text'>
                   <div className='homeBlog__date'>
@@ -50,6 +56,7 @@ function HomeBlog(props) {
                 <ButtonStrong fill={'white'} description={'Descubrir'}></ButtonStrong>
               </NavLink>  
             ))}
+            <MouseCursor></MouseCursor>
           </div>
         </article>
       </section>

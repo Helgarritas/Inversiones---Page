@@ -25,7 +25,12 @@
 .homeBanner__title{
     display: flex;
     flex-direction: column;
-    gap: -20px;
+    // gap: -20px;
+    &  h1{
+        @media (min-width: 360px) and (max-width: 640px) {
+            font-size: 30px;
+        }
+    }
 
     & > :nth-child(1){
         
@@ -88,6 +93,9 @@
     flex-direction: column;
     gap: 20px;
     animation: sliderInfinite 6s ease-in-out infinite;
+    @media (min-width: 360px) and (max-width: 640px) {
+        animation: sliderInfinite2 6s ease-in-out infinite;
+    }
     h1 {
         color: $yellow-primary;
     }
@@ -105,5 +113,19 @@
     }
     100% {
         transform: translateY(-282px); /* 3 slides width */
+    }
+}
+@keyframes sliderInfinite2 {
+    0% {
+        transform: translateY(0);
+    }
+    33.33% {
+        transform: translateY(-64px); /* 1 slide width */
+    }
+    66.66% {
+        transform: translateY(-128px); /* 2 slides width */
+    }
+    100% {
+        transform: translateY(-196px); /* 3 slides width */
     }
 }

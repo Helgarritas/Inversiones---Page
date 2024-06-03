@@ -21,6 +21,7 @@ $color-fourth: #3d3d3d;
     font-size: 22px;
     font-weight: $weight;
     line-height: 33px; /* 150% */
+    letter-spacing: 0.3px
 }; 
 @mixin headline-regular($weight){
     font-size: 20px;
@@ -80,7 +81,6 @@ body{
     background: rgba(0, 0, 0, 1);
     color: white;
     scroll-behavior: smooth;
-    cursor: none;
 
 }
 h1,h2,h3,h4{
@@ -96,7 +96,6 @@ li,a{
     text-decoration: none;
 }
 svg{
-    cursor: none;
 }
 a{
     color: white;
@@ -128,39 +127,43 @@ h1{
     @media screen and (max-width:600px){
         font-size: 40px;
         font-weight: 600;
+        line-height: normal;
         letter-spacing: -1.6px;
     }
 }
 h2{
     font-size: 50px;
     font-weight: 600;
-    letter-spacing: -2px;
     line-height: normal;
+    letter-spacing: -2px;
     @media screen and (max-width:600px){
         font-size: 30px;
         font-weight: 600;
+        line-height: normal;
         letter-spacing: -1.2px;
     }
 }
 h3{
     font-size: 40px;
     font-weight: 600;
-    letter-spacing: -1.6px;
     line-height: normal;
+    letter-spacing: -1.6px;
     @media screen and (max-width:600px){
-        font-size: 28px;
+        font-size: 32px;
         font-weight: 600;
+        line-height: normal;
         letter-spacing: -1.12px;
     }
 }
 h4{
     font-size: 30px;
     font-weight: 600;
-    letter-spacing: -1.2px;
     line-height: normal;
+    letter-spacing: -1.2px;
     @media screen and (max-width:600px){
         font-size: 24px;
         font-weight: 600;
+        line-height: normal;
         letter-spacing: -0.96px;
     }
 } 
@@ -203,6 +206,7 @@ h5{
 @import './Pages/About/Purpose/Purpose';
 @import './Pages/About/AboutTeam/AboutTeam';
 @import './Pages/About/AboutHistory/AboutHistory';
+@import './Pages/About/AboutEardth/AboutEardth';
 // Solutions
 @import './Pages/Solutions/SolutionsBanner/SolutionsBanner';
 // Notice

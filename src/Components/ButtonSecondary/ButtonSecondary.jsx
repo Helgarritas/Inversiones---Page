@@ -1,10 +1,31 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink,useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+
+// Components
+import LoaderContext from '../Loader/LoaderContext';
 
 const ButtonSecondary = ({description,fill,link}) => {
+
+  let navigate = useNavigate();
+  const showLoader = useContext(LoaderContext);
+  const tiempoRestante = 1600; 
+  
+  const delayLink = (e, path) => {
+    e.preventDefault();
+    showLoader(true);
+    setTimeout(() => {
+      navigate(path);
+    }, tiempoRestante);
+  };
   return (
     <>
-      <NavLink to={link} className='button__secondary' style={{borderColor: `${fill}`}}>
+      <NavLink 
+        className='button__secondary' 
+        onClick={(e) => { delayLink(e, link); showLoader(); }}
+        style={{borderColor: `${fill}`}}
+        to={link} 
+      >
         <span style={{color: `${fill}`}}>{description}</span>
         <div className='button__secondary--icons'>
           <div className='button__secondary--slider'>

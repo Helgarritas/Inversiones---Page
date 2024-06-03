@@ -9,7 +9,9 @@
     left: 0;
     border: 3px dotted $yellow-primary;
     border-radius: 50%;
-    transition: translate 0.06s, transform .4s;
+    opacity: 0;
+    scale: 0.7;
+    transition: translate ease 0.06s, transform ease .4s, scale ease .4s, opacity .4s;
     pointer-events: none;
     z-index: 100;
     & > p{
@@ -29,5 +31,5 @@
 }
 .service__scale-mouse{
     transform: scale(.7);
-    // transition: ease .8s;
+    transition: ease .8s;
 }

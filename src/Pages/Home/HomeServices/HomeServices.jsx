@@ -10,7 +10,10 @@ import LoaderContext from '../../../Components/Loader/LoaderContext';
 
 // Image
 
-function HomeServices() {
+function HomeServices({animationMouse}) {
+  useEffect(() => {
+    animationMouse();
+  }, []);
 
   const backgroundCardOver = (indice) =>{
     const cardArray = document.querySelectorAll('.homeServices__card');
@@ -47,15 +50,15 @@ function HomeServices() {
 
   return (
     <>
-      <section className='homeServices'>
+      <section className='homeServices mouse__animation--scope'>
         <article className='homeServices__container'>
           {DataHomeServices.map((obj,indice) => (
             <NavLink
-              onClick={(e) => { delayLink(e, obj.link); showLoader(); }}  
-              className='homeServices__card' 
-              onMouseOver={() => backgroundCardOver(indice)} 
-              onMouseOut ={() => backgroundCardOuts(indice)} 
-              key={obj.id}
+            onClick={(e) => { delayLink(e, obj.link); showLoader(); }}  
+            className='homeServices__card' 
+            onMouseOver={() => backgroundCardOver(indice)} 
+            onMouseOut ={() => backgroundCardOuts(indice)} 
+            key={obj.id}
             >
               <img className='homeServices__card--img' src={obj.image} alt='dads'/>
               <h5 className='homeServices__card--title'>{obj.title}</h5>
@@ -65,6 +68,7 @@ function HomeServices() {
             </NavLink>
           ))}
         </article>
+        <MouseCursor></MouseCursor>
       </section>
     </>
   );

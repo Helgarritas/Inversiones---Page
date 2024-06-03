@@ -20,6 +20,8 @@
     border-radius: 50%;
     background: rgba(255,255,255,0.2);
     transition: ease .3s;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    cursor: pointer;
     &:hover{
         background: rgba(255,255,255,0.25);
     }

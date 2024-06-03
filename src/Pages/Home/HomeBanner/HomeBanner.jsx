@@ -53,12 +53,10 @@ function HomeBanner(props) {
   return (
     <>
       <header className='homeBanner'>
-        {/* <video className='homeBanner__background' autoPlay loop muted>
+        <video className='homeBanner__background' autoPlay loop muted>
           <source  src={background} type='video/mp4'/>
-        </video> */}
-        {/* <video className='bannerHome__background' loop autoPlay muted >
-          <source autoPlay src={background} type='video/mp4'/>
-        </video> */}
+        </video>
+
         <article className='homeBanner__container'>
           <div className='homeBanner__title'>
             <h1 className=' scrollText'>Implementamos</h1><br/>

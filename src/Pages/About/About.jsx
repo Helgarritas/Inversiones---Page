@@ -7,6 +7,7 @@ import PurPose from './Purpose/PurPose';
 import AboutTeam from './AboutTeam/AboutTeam';
 import SliderOpinion from '../../Components/SliderOpinion/SliderOpinion';
 import AboutHistory from './AboutHistory/AboutHistory';
+import AboutEardth from './AboutEardth/AboutEardth';
 
 function About(props) {
   return (
@@ -15,6 +16,7 @@ function About(props) {
       <PurPose/>
       {/* <AboutTeam/> */}
       <AboutHistory></AboutHistory>
+      <AboutEardth></AboutEardth>
       <SliderOpinion background={'#F5CB1F'} color={'black'}/>
     </>
   )

@@ -46,20 +46,22 @@ function ArticleBlog(props) {
             </div>
             <div className='blogNotice__section'>
               <p>Más de nuestro blog</p>
-              {
-                filterSectionNotice.map((obj)=>(
-                  <NavLink
-                    onClick={(e) => { delayLink(e, obj.link); showLoader(); }}  
-                    className='blogNotice__section--container' key={obj.id} to={`/blog/${obj.id}`}>
-                    <img className='blogNotice__portada--image' src={obj.image}/>
-                    <div className='blogNotice__content'>
-                      <p>{obj.date}</p>
-                      <p>{obj.title}</p>
-                      <p>{obj.portada}</p>
-                    </div>
-                  </NavLink>  
-                ))
-              }
+              <div className='blogNotice__notices'>
+                {
+                  filterSectionNotice.map((obj)=>(
+                    <NavLink
+                      onClick={(e) => { delayLink(e, obj.link); showLoader(); }}  
+                      className='blogNotice__section--container' key={obj.id} to={`/blog/${obj.id}`}>
+                      <img className='blogNotice__portada--image' src={obj.image}/>
+                      <div className='blogNotice__content'>
+                        <p>{obj.date}</p>
+                        <p>{obj.title}</p>
+                        <p>{obj.portada}</p>
+                      </div>
+                    </NavLink>  
+                  ))
+                }
+              </div>
             </div>
         </section>
       </article>

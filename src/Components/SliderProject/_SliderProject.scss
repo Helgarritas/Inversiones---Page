@@ -1,7 +1,8 @@
 .sliderProjects{
     padding: 100px 0px 80px 130px ;
+    overflow: hidden;
     @media (min-width: 360px) and (max-width: 640px) {
-        padding: 100px 0px 80px 32px ;
+        padding: 80px 0px 80px 32px ;
     }
 }
 .sliderProjects__container{
@@ -17,10 +18,10 @@
     padding: 0 130px 0 0;
     display: flex;
     gap: 50px;
-    overflow-x: scroll ;
+    overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none;
     transition: ease .3s;
+    scrollbar-width: none;
 }
 .sliderProjects__card{
     min-width: 300px;
@@ -32,6 +33,7 @@
     justify-content: end;
     scroll-snap-align: start;
     scroll-snap-stop:always;
+    scrollbar-width: none;
     & > :nth-child(2){
         color: $content-dark-primary;
     }
@@ -57,6 +59,7 @@
     border-radius: 50%;
     transition: ease .3s;
     background: rgba(255,255,255,0.2);
+    cursor: pointer;
     &:hover{
         background: rgba(255,255,255,0.3);
     }

@@ -9,19 +9,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 60px;
+    gap: 80px;
     @media (min-width: 360px) and (max-width: 640px) {
-        gap: 40px;
+        gap: 50px;
     }
 }
-.charapters__title{
 
-}
 .process{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 70px;
+    @media (min-width: 360px) and (max-width: 640px) {
+        gap: 40px;
+    }
 }
 .process__card{
     max-width: 324px;

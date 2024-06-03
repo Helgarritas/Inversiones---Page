@@ -4,9 +4,11 @@
     flex-direction: column;
     gap: 34px;
     background: white;
-    overflow: hidden;
+    // overflow: hidden;
+    position: relative;
     @media (min-width: 360px) and (max-width: 640px) {
         padding: 70px 0 70px 32px;
+        gap: 10px;
     }
 }
 .homeBlog__container{
@@ -28,6 +30,11 @@
     display: flex;
     flex-direction: column;
     gap: 44px;
+    // justify-content: end;
+    @media (min-width: 360px) and (max-width: 640px) {
+        gap: 40px;
+        padding: 0 32px 0 0;
+    }
     & > :nth-child(1){
         color: $content-light-primary;        
     }
@@ -42,8 +49,11 @@
     margin-left: auto;
     display: flex;
     gap: 30px;
+    position: relative;
+    cursor: none;
+
     @media (min-width: 360px) and (max-width: 640px) {
-        padding: 70px 80px 70px 32px;
+        padding: 0px 80px 30px 32px;
         margin: 0;
         overflow-x: scroll;
         scroll-snap-type: x mandatory;
@@ -58,6 +68,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    cursor: none;
     @media (min-width: 360px) and (max-width: 640px) {
         min-width: 280px;
         scroll-snap-align: start;

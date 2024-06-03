@@ -1,8 +1,13 @@
 .homeServices{
+    margin: 30px 0 0 0;
     padding: 70px 100px 100px 100px;
     display: flex;
     flex-direction: column;
     gap: 60px;
+    cursor: none;
+    & * {
+        cursor: none;
+    }
     @media (min-width: 360px) and (max-width: 640px) {
         padding: 70px 0 70px 32px;
     }
@@ -11,20 +16,18 @@
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 30px;
-    position: relative;
     @media (min-width: 360px) and (max-width: 640px) {
         padding: 0 32px 0 0;
         overflow-x: scroll;
-        overflow-y: none;
         scrollbar-width: none;
         scroll-snap-type: x mandatory;
     }
 }
 //* Card
 .homeServices__card{
-    padding: 0 0px;
+    padding: 0 20px;
     width: 310px;
-    height: 580px;
+    height: 570px;
     display: grid;
     grid-template-rows: repeat(7,1fr);
     place-items: center;
@@ -32,7 +35,8 @@
     position: relative;
     transition: ease .3s;
     @media (min-width: 360px) and (max-width: 640px) {
-        padding: 0 0px;
+        width: 280px;
+        height: 550px;
         scroll-snap-align: start;
         scroll-snap-stop: always;
     }
@@ -54,7 +58,7 @@
         opacity: 1;
     }
     // hover Animation text
-    &:hover  .homeServices__animation{
+    &:hover .homeServices__animation{
         transform: translateY(0);
         opacity: 1;
     }
@@ -79,6 +83,7 @@
     @include bodylarge-regular;
     color: rgba(255,255,255,0.9);
     text-align: center;
+
 }
 .homeServices__card--line{
     grid-area: 6/1/7/2;
@@ -95,11 +100,16 @@
     color: transparent;
     background-size: 100% 300%;
     background-position: 0% 100%;
+    
 }
 .homeServices__animation{
     transition: ease-out .6s;
     transform: translateY(1rem);
     opacity: 0;
+    @media (min-width: 360px) and (max-width: 640px) {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 // elements image

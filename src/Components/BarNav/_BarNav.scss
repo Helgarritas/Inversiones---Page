@@ -7,7 +7,8 @@
     color: $content-dark-primary;
     position: fixed;
     z-index: 99;
-    @media screen and (max-width: 768px){
+    @media (min-width: 360px) and (max-width: 640px) {
+        height: 64px;
         padding: 0 32px;
     }
     &::before{
@@ -27,21 +28,26 @@
 }
 //*Logo
 .nav__container--logo{
+
 }
 .nav__logo{
+
 }
 //* Links
 .nav__container--link{
     display: flex;
     gap: 50px;
-    @media screen and (max-width: 768px){
+    @media (min-width: 360px) and (max-width: 640px) {
         height: 100vh;
         width: 60%;
-        padding: 100px 20px 80px 20px;
+        padding: 100px 20px 80px 30px;
         flex-direction: column;
+        gap: 22px;
         position: absolute;
         top: 0;
         right: 0;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        transition: transform ease .48s;
         transform: translateX(100%);
         background-color: black;
     }
@@ -54,8 +60,23 @@
 }
 .nav__container--link > :nth-child(3) > :nth-child(2){
 }
+
+.nav__link--container{
+    display: flex;
+    justify-content: space-between;
+    transition: ease .4s;
+    & .icon__stroke{
+        display: none;
+        fill: $content-dark-primary;
+        @media (min-width: 360px) and (max-width: 640px) {
+            display: block;
+        }
+    }
+}
 .nav__link{
     position: relative;
+    display: flex;
+    justify-content: space-between;
     &:hover::before{
         left: 0;
         width: 100%;
@@ -79,22 +100,49 @@
 }
 .nav__link--animation{
     transition: ease .35s;
-    transition-delay: .4s;
+    transition-delay: .35s;
 }
 .navLinks__animation{
-    transition: ease .35s;
-    transition-delay: 0s;
+    transition: ease .3s;
     opacity: 0;
 }
 //* Sub link
 .nav__sub--container{
     position: relative;
+    transition: transform ease .46s;
+    @media (min-width: 360px) and (max-width: 640px) {
+        transform: translateX(60px);
+    }
     & > :nth-child(1){
         height: 80px;
         display: flex;
-        align-items: center;
+        align-items: center;    
+        @media (min-width: 360px) and (max-width: 640px) {
+            height: auto;
+        }
     }
-}   
+}
+// Container Link
+.nav__sub--container:nth-child(1){
+    transition-delay: .05s;
+}
+.nav__sub--container:nth-child(2){
+    transition-delay: .1s;
+}
+.nav__sub--container:nth-child(3){
+    transition-delay: .15s;
+}
+.nav__sub--container:nth-child(4){
+    transition-delay: .2s;
+}
+
+@media (min-width: 360px) and (max-width: 640px) {
+    .nav__link--animation{
+        transform: translateX(0px);
+    }
+}
+
+
 .nav__sub--link{
     width: 188px;
     padding: 24px 26px;
@@ -108,14 +156,35 @@
     background: $color-terceary;
     transition: height ease .4s,opacity ease .4s;
     overflow: hidden;
-    & a{
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    @media (min-width: 360px) and (max-width: 640px) {
+        padding: 0 15px;
+        position: relative;
+        width: 100%;
+        top: 0;
+        left: -0;
+        opacity: 1;
+        border: 1px solid rgba(255, 255, 255, 0);
+        background: transparent;
+    };
+    & .nav__link{
         color: $content-dark-secondary;
         transition: color ease .3s;
+        @media (min-width: 360px) and (max-width: 640px) {
+            border-left: 1px solid $content-dark-secondary;
+            padding-left: 15px;
+        };
+    }
+    & :nth-child(1){
+        @media (min-width: 360px) and (max-width: 640px) {
+            margin-top: 14px;
+        };
     }
     & a:hover{
         color: $content-dark-primary;
     }
 }
+
 //* Button action
 .hamburguer{
     padding: 13px 10px;
@@ -123,7 +192,7 @@
     flex-direction: column;
     gap: 6px;
     z-index: 99;
-    @media screen and (max-width: 768px){
+    @media (min-width: 360px) and (max-width: 640px) {
         display: flex;
     }
 }
@@ -131,7 +200,7 @@
     width: 24px;
     height: 2px;
     border-radius: 100px;
-    transition: ease-out .3s;
+    transition: ease-out .46s;
     background: white;
 }
 // Animation
@@ -146,4 +215,10 @@
 .transform__line .hamburguer__line3{
     transform: rotate(-45deg) translate(5.5px,-5.5px);
     width: 24.5px;
+}
+
+@media (min-width: 360px) and (max-width: 640px) {
+    .transform__container--links{
+        transform: translateX(0%);
+    }
 }

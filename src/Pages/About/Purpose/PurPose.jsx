@@ -10,9 +10,8 @@ function PurPose(props) {
         <article className='puerpose__container'>
         {/* <Spline scene="https://prod.spline.design/FsmiOeWPCW5wxUkz/scene.splinecode"/> */}
           <p className='purpose__description'>
-          “AGRUPAR TODAS LAS <br /> INSTRUCCIONES <br />DIGITALES IFORMACIÓN 
-          <br />CONTEXTUAL SOBRE <br /> LAS TAREAS A REALIZAR <br />
-          SOBRE EL OBJETO <br /> REAL.”</p>
+          "Expandiendo nuestra influencia global, nos consolidamos como la principal opción en la industria minera, mediante la exploración y desarrollo ético rentable de yacimientos"
+          </p>
           <img className='purpose__background' src={image} alt="Proposito" />
         </article>
       </section>

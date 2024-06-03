@@ -68,9 +68,7 @@ function HomeOpinion() {
         <article className='homeOpinion__container' ref={container}>
           {DataHomeOpinions.map((obj)=>(
             <div className='homeOpinion__card' key={obj.id} >
-              <div className='homeOpinion__slider--imgs'>
-                <img className='homeOpinion__slider--img' src={image} alt="Usuario" />
-              </div>
+              <img className='homeOpinion__slider--img' src={image} alt="Usuario" />
               <div className='homeOpinion__slider--content'>
                 <p>{obj.text}</p>
                 <div className='homeOpinion__slider--description'>
