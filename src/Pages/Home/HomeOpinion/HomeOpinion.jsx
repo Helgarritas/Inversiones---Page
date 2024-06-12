@@ -64,7 +64,10 @@ function HomeOpinion() {
   return (
     <>
       <section className='homeOpinion' ref={carousel}>
-        <h3 className='homeOpinion__title'>¿ Qué dicen <br /> nuestros clientes ?</h3>
+        <div className='homeOpinion__title'>
+          <h3>TESTIMONIOS</h3>
+          <p>QUE DICEN NUESTROS CLIENTES SOBRE NOSOTROS</p>
+        </div>
         <article className='homeOpinion__container' ref={container}>
           {DataHomeOpinions.map((obj)=>(
             <div className='homeOpinion__card' key={obj.id} >

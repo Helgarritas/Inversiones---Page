@@ -26,17 +26,12 @@
 .nav.active::before{
     height: 100%;
 }
-//*Logo
-.nav__container--logo{
-
-}
-.nav__logo{
-
-}
 //* Links
 .nav__container--link{
     display: flex;
     gap: 50px;
+    transition: opacity ease .35s;
+    transition-delay: .2s;
     @media (min-width: 360px) and (max-width: 640px) {
         height: 100vh;
         width: 60%;
@@ -45,11 +40,13 @@
         gap: 22px;
         position: absolute;
         top: 0;
-        right: 0;
+        left: 0 ;
         border: 1px solid rgba(255, 255, 255, 0.09);
         transition: transform ease .48s;
-        transform: translateX(100%);
-        background-color: black;
+        transition-delay: 0s;
+        transform: translateX(-100%);
+        background-color: #060606;
+        z-index: -9999;
     }
 }
 .nav__container--link > :nth-child(1) > :nth-child(2){
@@ -58,20 +55,25 @@
 .nav__container--link > :nth-child(4) > :nth-child(2){
     padding: 0;
 }
-.nav__container--link > :nth-child(3) > :nth-child(2){
-}
-
 .nav__link--container{
     display: flex;
     justify-content: space-between;
-    transition: ease .4s;
-    & .icon__stroke{
+    & svg{
         display: none;
         fill: $content-dark-primary;
         @media (min-width: 360px) and (max-width: 640px) {
             display: block;
         }
     }
+    & .icon__stroke{
+        fill: $content-dark-primary;
+    }
+    & > :nth-child(2){
+        transition: transform ease .46s;
+    }
+}
+.arrow{
+    transform: rotate(90deg);
 }
 .nav__link{
     position: relative;
@@ -98,21 +100,14 @@
     align-items: center;
     gap: 10px;
 }
-.nav__link--animation{
+.navLinks__animation{ // burguer
     transition: ease .35s;
-    transition-delay: .35s;
-}
-.navLinks__animation{
-    transition: ease .3s;
     opacity: 0;
 }
 //* Sub link
 .nav__sub--container{
     position: relative;
     transition: transform ease .46s;
-    @media (min-width: 360px) and (max-width: 640px) {
-        transform: translateX(60px);
-    }
     & > :nth-child(1){
         height: 80px;
         display: flex;
@@ -141,8 +136,6 @@
         transform: translateX(0px);
     }
 }
-
-
 .nav__sub--link{
     width: 188px;
     padding: 24px 26px;
@@ -159,6 +152,7 @@
     border: 1px solid rgba(255, 255, 255, 0.07);
     @media (min-width: 360px) and (max-width: 640px) {
         padding: 0 15px;
+        height: 0;
         position: relative;
         width: 100%;
         top: 0;
@@ -187,7 +181,7 @@
 
 //* Button action
 .hamburguer{
-    padding: 13px 10px;
+    padding: 13px 10px 13px 0;
     display: none;
     flex-direction: column;
     gap: 6px;

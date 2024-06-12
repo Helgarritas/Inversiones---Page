@@ -14,7 +14,7 @@ $content-dark-secondary: #ffffffb3;
 $content-dark-tercery: rgba(255, 255, 255, 0.5);
 $background-line: rgba(0,0,0,.3);
 $color-secondary: #EFEFEF;
-$color-terceary: #101010;
+$color-terceary: #161616;
 $color-fourth: #3d3d3d;
 //* Headline( Titular )
 @mixin upline($weight){
@@ -78,7 +78,7 @@ html{
 body{
     font-family: "Oswald", sans-serif;
     // background: #F8F8F8;
-    background: rgba(0, 0, 0, 1);
+    background: #080808;
     color: white;
     scroll-behavior: smooth;
 
@@ -147,7 +147,7 @@ h3{
     font-size: 40px;
     font-weight: 600;
     line-height: normal;
-    letter-spacing: -1.6px;
+    letter-spacing: -1.5px;
     @media screen and (max-width:600px){
         font-size: 32px;
         font-weight: 600;
@@ -172,8 +172,40 @@ h5{
     font-weight: 600;
     line-height: normal;
     letter-spacing: -0.96px;
+    @media screen and (max-width:640px){
+        font-size: 22px;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: -0.96px;
+    }
 }
+//* animations of opacity
+.solutionHome__animation--card{
+    opacity: 0;
+    transform: translateY(3rem);
+    transition: ease .6s;
+}
+.card__animation--opacity{
+    opacity: 0;
+    transition: ease .6s;
+}
+.solutionsHome__animation{
+    opacity: 1;
+    transform: translateY(0%);
+}
+//* Animations and styles of banner
 
+.banner__animation--image{
+    transform: translateY(4rem);
+    transition: ease .8s;
+}
+.banner__animation--content{
+    transition: ease .5s;
+    transition-delay: .45s;
+}
+.banner__animation{
+    opacity: 0;
+}
 // Components{
 @import './Components/BarNav/BarNav';
 @import './Components/Footer/Footer';
@@ -198,13 +230,11 @@ h5{
 @import './Pages/Home/HomeAbout/HomeAbout';
 @import './Pages/Home/HomeServices/HomeServices';
 @import './Pages/Home/HomeProjects/HomeProjects';
-@import './Pages/Home/HomeTeam/HomeTeam';
 @import './Pages/Home/HomeOpinion/HomeOpinion';
 @import './Pages/Home/HomeBlog/HomeBlog';
 // About
 @import './Pages/About/AboutBanner/AboutBanner';
 @import './Pages/About/Purpose/Purpose';
-@import './Pages/About/AboutTeam/AboutTeam';
 @import './Pages/About/AboutHistory/AboutHistory';
 @import './Pages/About/AboutEardth/AboutEardth';
 // Solutions
@@ -213,4 +243,4 @@ h5{
 @import './Pages/Blog/Blog';
 // Blog
 @import './Pages/Project/ProjectBanner/ProjectHome';
-@import './Pages/Project/ProjectMap/ProjectMap'
+@import './Pages/Project/ProjectMap/ProjectMap';

@@ -1,5 +1,5 @@
 .homeProjects{
-    padding: 100px 100px;
+    padding: 80px 100px;
     display: flex;
     justify-content: space-between;
     gap: 42px;
@@ -60,11 +60,13 @@
 .homeProjects__cards{
     display: grid;
     justify-content: space-between;
-    gap: 20px;
-    column-gap: 20px;
+    gap: 30px;
     grid-template-areas: 
     'a b '
     'c c';
+    @media (min-width: 360px) and (max-width: 640px) {
+        gap: 20px;
+    }
 }
 .homeProjects__card{
     height: 250px;

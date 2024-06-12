@@ -21,7 +21,7 @@ const ButtonSecondary = ({description,fill,link}) => {
   return (
     <>
       <NavLink 
-        className='button__secondary' 
+        className='button__secondary card__animation--opacity' 
         onClick={(e) => { delayLink(e, link); showLoader(); }}
         style={{borderColor: `${fill}`}}
         to={link} 

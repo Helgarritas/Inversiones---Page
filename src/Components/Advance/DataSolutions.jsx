@@ -1,9 +1,13 @@
-import imageMs from '/src/assets/Solutions/Solution-Banner-background1.png';
-import imageMa from '/src/assets/Solutions/Solution-Banner-background2.png';
-import imageAm from '/src/assets/Solutions/Solution-Banner-background3.png';
-import imageVm from '/src/assets/Solutions/Solurion-banner-background4.png';
+// import imageMs from '/src/assets/Solutions/Solution-Banner-background1.png';
+// import imageMa from '/src/assets/Solutions/Solution-Banner-background2.png';
+// import imageAm from '/src/assets/Solutions/Solution-Banner-background3.png';
+// import imageVm from '/src/assets/Solutions/Solurion-banner-background4.png';
 
-import image from '/src/assets/Backgrounds/back.png';
+import imageMs from '/src/assets/Solutions/movil.png';
+import imageMa from '/src/assets/Solutions/movil2.png';
+import imageAm from '/src/assets/Solutions/movil3.png';
+import imageVm from '/src/assets/Solutions/movil4.png';
+
 
 const DataSolutions = {
     "mineriaSubterranea":{
@@ -62,33 +66,6 @@ const DataSolutions = {
                 description: 'Colaboradores activos',
             },
         ],
-        projects:[
-            {
-                image: image,
-                title: 'U.M Shuntur',
-                height: 'Huaraz - Pueblo'
-            },
-            {   
-                image: image,
-                title: 'U.M Shuntur',
-                height: 'Huaraz - Pueblo'
-            },
-            {
-                image: image,
-                title: 'U.M Shuntur',
-                height: 'Huaraz - Pueblo'
-            },
-            {
-                image: image,
-                title: 'U.M Shuntur',
-                height: 'Huaraz - Pueblo'
-            },
-            {
-                image: image,
-                title: 'U.M Shuntur',
-                height: 'Huaraz - Pueblo'
-            },
-        ]
     },
     "mineriaSuperficial":{
         banner:{
@@ -146,38 +123,6 @@ const DataSolutions = {
                 description: 'Colaboradores Activos',
             },
         ],
-        projects:[
-            {
-                image: image,
-                title: 'U.M Shuntur',
-                height: '4500 msnm'
-            },
-            {   
-                image: image,
-                title: 'U.M Shuntur',
-                height: '4500 msnm'
-            },
-            {
-                image: image,
-                title: 'U.M Shuntur',
-                height: '4500 msnm'
-            },
-            {
-                image: image,
-                title: 'U.M Shuntur',
-                height: '4500 msnm'
-            },
-            {
-                image: image,
-                title: 'U.M Shuntur',
-                height: '4500 msnm'
-            },
-            {
-                image: image,
-                title: 'U.M Shuntur',
-                height: '4500 msnm'
-            },
-        ]
     },
     "alquilerDeMaquinaria":{
         banner:{
@@ -235,38 +180,6 @@ const DataSolutions = {
                 description: 'Convenios internacionales',
             },
         ],
-        projects:[
-            {
-                image: image,
-                title: 'Scoob R1300G',
-                height: 'Subterranea'
-            },
-            {   
-                image: image,
-                title: 'Scoob R1300G',
-                height: 'Subterranea'
-            },
-            {
-                image: image,
-                title: 'Scoob R1300G',
-                height: 'Subterranea'
-            },
-            {
-                image: image,
-                title: 'Scoob R1300G',
-                height: 'Subterranea'
-            },
-            {
-                image: image,
-                title: 'Scoob R1300G',
-                height: 'Subterranea'
-            },
-            {
-                image: image,
-                title: 'Scoob R1300G',
-                height: 'Subterranea'
-            },
-        ]
     },
     "ventaDeMaquinaria":{
         banner:{
@@ -324,38 +237,6 @@ const DataSolutions = {
                 description: 'Convenios internacionales',
             },
         ],
-        projects:[
-            {
-                image: image,
-                title: 'Scoob R1300G',
-                height: 'Subterranea'
-            },
-            {   
-                image: image,
-                title: 'Scoob R1300G',
-                height: 'Subterranea'
-            },
-            {
-                image: image,
-                title: 'Scoob R1300G',
-                height: 'Subterranea'
-            },
-            {
-                image: image,
-                title: 'Scoob R1300G',
-                height: 'Subterranea'
-            },
-            {
-                image: image,
-                title: 'Scoob R1300G',
-                height: 'Subterranea'
-            },
-            {
-                image: image,
-                title: 'Scoob R1300G',
-                height: 'Subterranea'
-            },
-        ]
     },
 }
 export default DataSolutions;

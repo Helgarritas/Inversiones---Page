@@ -12,6 +12,7 @@ import MouseCursor from '../../../Components/AnimationMouse/MouseCursor';
 
 
 function HomeBlog({animationMouse}) {
+  const handleScroll = useContext(LoaderContext);
 
   useEffect(() => {
     animationMouse();
@@ -19,7 +20,7 @@ function HomeBlog({animationMouse}) {
 
   //* chance boolean Loader
   let navigate = useNavigate();
-  const showLoader = useContext(LoaderContext);
+  const {showLoader} = useContext(LoaderContext);
   const tiempoRestante = 1600; 
   
   const delayLink = (e, path) => {
@@ -33,10 +34,10 @@ function HomeBlog({animationMouse}) {
   return (
     <>
       <section className='homeBlog'>
-        <h2 className='homeBlog__title'>BLOG</h2>
+        <h3 className='homeBlog__title'>BLOG</h3>
         <article className='homeBlog__container'>
           <div className='homeBlog__description'>
-            <p>Explora nuestro blog donde compartimos ideas, consejos y tendencias relevantes acerca de la industria.</p>
+            <p className='homeProjects__card--height'>Explora nuestro blog donde compartimos ideas, consejos y tendencias relevantes acerca de la industria.</p>
             <ButtonSecondary description={'Descubrir'} fill={'black'} link={'/blog/1'}></ButtonSecondary>
           </div>
           <div className='homeBlog__slider mouse__animation--scope'>
@@ -51,7 +52,7 @@ function HomeBlog({animationMouse}) {
                     <p>{obj.indes}</p>
                     <p>{obj.date}</p>
                   </div>
-                  <p className='homeBlog__card--title'>{obj.description}</p>
+                  <p className='homeBlog__card--title solutionHome__animation--card'>{obj.description}</p>
                 </div>
                 <ButtonStrong fill={'white'} description={'Descubrir'}></ButtonStrong>
               </NavLink>  

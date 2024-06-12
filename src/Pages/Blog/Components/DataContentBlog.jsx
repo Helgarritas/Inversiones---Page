@@ -1,8 +1,8 @@
-import image1 from '/src/assets/Backgrounds/back.png'
-import image2 from '/src/assets/Backgrounds/back.png'
-import image3 from '/src/assets/Backgrounds/back.png'
-import image4 from '/src/assets/Backgrounds/back.png'
-import image5 from '/src/assets/Backgrounds/back.png'
+import image1 from '/src/assets/Backgrounds/Home-Blog-Image2.png'
+import image2 from '/src/assets/Backgrounds/Home-Blog-Image1.png'
+import image3 from '/src/assets/Backgrounds/Home-Blog-Image1.png'
+import image4 from '/src/assets/Backgrounds/Home-Blog-Image1.png'
+import image5 from '/src/assets/Backgrounds/Home-Blog-Image1.png'
 
 let DataContentBlog = [
     {

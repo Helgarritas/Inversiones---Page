@@ -1,5 +1,5 @@
 .sliderProjects{
-    padding: 100px 0px 80px 130px ;
+    padding: 70px 0px 60px 100px ;
     overflow: hidden;
     @media (min-width: 360px) and (max-width: 640px) {
         padding: 80px 0px 80px 32px ;
@@ -11,7 +11,7 @@
     // gap: 50px;
 }
 .sliderProjects__title{
-    margin-bottom: 40px;
+    margin-bottom: 45px;
 }
 .sliderProjects__slider{
     width: 100%;
@@ -34,6 +34,11 @@
     scroll-snap-align: start;
     scroll-snap-stop:always;
     scrollbar-width: none;
+    overflow: hidden;
+    cursor: pointer;
+    &:hover .sliderProjects__image{
+        scale: 1.03;
+    }
     & > :nth-child(2){
         color: $content-dark-primary;
     }
@@ -48,7 +53,8 @@
     position: absolute;
     left: 0;
     top: 0;
-    z-index: -1;
+    transition: scale .4s;
+    z-index: -2;
 }
 
 // Buttons
@@ -66,4 +72,10 @@
     &  .icon__stroke{
         fill: white;
     }
+}
+
+//* Animaciones
+.sliderProject__opacity{
+    transition: ease .56s;
+    transition-delay: .5s;
 }

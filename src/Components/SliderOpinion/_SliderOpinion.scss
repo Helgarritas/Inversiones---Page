@@ -7,8 +7,11 @@
 }
 .homeSlider__description{
     color: $content-dark-primary;
-    font-size: 56px;
     font-weight: 500;
+    font-size: 55px;
+    @media (min-width: 360px) and (max-width: 640px) {
+        font-size: 45px;
+    }
 }
 .homeSlider__card:nth-of-type(even) p{
     color: $content-dark-secondary;

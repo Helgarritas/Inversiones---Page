@@ -1,7 +1,27 @@
 .projectMap{
-    padding: 0 100px;
-    height: 100vh   ;
+    padding: 100px 0 40px 0;
+    display: flex;
+    justify-content: center;
+    @media (min-width: 360px) and (max-width: 640px) {
+        padding: 70px 0 50px 0;
+    }
 }
-.projectMap__container{
 
+.projectMap__container{
+    width: 80%;
+    min-height: 70vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    justify-items: center;
+    @media (min-width: 360px) and (max-width: 640px) {
+        width: 100%;
+        min-height: 100vh;
+        grid-template-columns: 100%;
+        gap: 40px;
+    }
+}
+
+.projectMap__description{
+    width: 80%;
 }

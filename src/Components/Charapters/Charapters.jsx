@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+import LoaderContext from '../Loader/LoaderContext';
 
 function Charapters({process}) {
+
+  const {handleScroll} = useContext(LoaderContext);
+  
   return (
     <>
       <section className='charapters'>
@@ -8,7 +12,7 @@ function Charapters({process}) {
           <h3 className='charapters__title'>Nuestro Proceso</h3>
           <div className='process'>
             {process.map((obj,index)=>(
-              <div className='process__card' key={index}>
+              <div className='process__card solutionHome__animation--card' key={index}>
                 <div className='process__card-content'>
                   <p>{obj.number}</p>
                   <p>{obj.title}</p>

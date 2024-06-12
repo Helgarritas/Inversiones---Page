@@ -7,7 +7,6 @@ import HomeAbout from './HomeAbout/HomeAbout';
 import HomeSlider from '../../Components/HomeSlider/HomeSlider';
 import HomeServices from './HomeServices/HomeServices';
 import HomeProjects from './HomeProjects/HomeProjects';
-import HomeTeam from './HomeTeam/HomeTeam';
 import HomeOpinion from './HomeOpinion/HomeOpinion';
 import HomeSliderClient from '../../Components/HomeSlider/HomeSliderClient';
 import HomeBlog from './HomeBlog/HomeBlog';

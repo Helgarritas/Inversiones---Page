@@ -4,6 +4,9 @@
     display: flex;
     align-items: center;
     position: relative;
+    @media (min-width: 360px) and (max-width: 640px) {
+        padding: 0 32px;
+    }
 }
 .projectbanner__background{
     width: 100%;

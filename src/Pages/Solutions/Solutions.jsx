@@ -8,17 +8,20 @@ import Advance from '../../Components/Advance/Advance';
 import SliderProject from '../../Components/SliderProject/SliderProject';
 // Data
 import DataSolutions from '../../Components/Advance/DataSolutions';
-
+import DataProjects from '../../Components/Data/DataProjects';
 function Solutions(props) {
   const {solutionId} = useParams();
 
   const banner = DataSolutions[solutionId].banner;
   const process = DataSolutions[solutionId].process;
   const counter = DataSolutions[solutionId].counter;
-  const projects = DataSolutions[solutionId].projects;
+  const projects = DataProjects.filter((obj)=>{
+    return obj.type == solutionId;
+  });
+  
   return (
     <>
-      <SolutionsBanner banner={banner}/>
+      <SolutionsBanner banner={banner} solutionId={solutionId}/>
       <Charapters process={process}/>
       <Advance counter={counter}/>
       <SliderProject projects={projects}></SliderProject>

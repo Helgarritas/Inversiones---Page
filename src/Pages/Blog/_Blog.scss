@@ -2,7 +2,7 @@
     padding: 130px 130px;
     background: #F5F7FA;
     @media screen and (max-width:600px){
-        padding: 120px 16px 80px 16px;        
+        padding: 120px 0 80px 16px;        
     }
 }
 .blogNotice__container{
@@ -65,11 +65,13 @@
     }
 }
 .blogNotice__notices{
+    padding:  0 70px 0 0;
     display: flex;
     flex-direction: column;
     gap: 32px;
     @media screen and (max-width: 768px){
         overflow-x: scroll;
+        scroll-snap-type: x mandatory;
         flex-direction: row;
         gap: 60px;
     }
@@ -82,6 +84,8 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 150px;
     @media screen and (max-width: 768px){
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
         min-width: max-content;
         grid-template-columns: repeat(1,100%);
         grid-template-rows: none;

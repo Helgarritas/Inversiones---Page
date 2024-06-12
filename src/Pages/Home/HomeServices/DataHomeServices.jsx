@@ -18,13 +18,13 @@ const DataHomeServices = [
   },
   {id: 3,
     link: '/solution/alquilerDeMaquinaria',
-    title: 'ALQUILER DE MAQUINÁRIA PESADA',
+    title: 'ALQUILER DE MAQUINÁRIA',
     text: 'Contamos con una alta flota de maquinaria para satisfacer las necesidades de su proyecto.',
     image: imageAm
   },
   {id: 4,
     link: '/solution/ventaDeMaquinaria',
-    title: 'VENTA DE MAQUINARIA PESADA',
+    title: 'VENTA DE MAQUINARIA',
     text: 'Ofrecemos maquinaria de alta calidad proporcionando durabilidad y eficiencia operacional.',
     image: imageVm
   },

@@ -1,9 +1,9 @@
 .aboutHistory{
     display: flex;
     flex-direction: column;
-    padding: 100px 0 100px 0;// left 0en movil
+    padding: 0px 0 70px 0;// left 0en movil
     @media (min-width: 360px) and (max-width: 640px) {
-        padding: 100px 0 80px 32px;// left 0en movil
+        padding: 60px 0 80px 32px;// left 0en movil
     }
 }
 .aboutHistory__container{
@@ -61,7 +61,7 @@
     width: 280px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 22px;
     @media (min-width: 360px) and (max-width: 640px) {
         min-width: 300px;
     }
@@ -109,7 +109,5 @@
     }
 }
 .aboutHistory__card--text{
-    margin-top: 2px;
-    transition: opacity ease .5s;
-    // opacity: 0;
+    transition-delay: .2s;
 }

@@ -1,19 +1,29 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import Spline from '@splinetool/react-spline';
-import image from '/src/assets/Backgrounds/Abou-Purpose-Image.png';
 
+// Components
+import MouseCursor from '../../../Components/AnimationMouse/MouseCursor';
 
-function PurPose(props) {
+function PurPose({animationMouse}) {
+  useEffect(() => {
+    animationMouse();
+  }, []);
+
   return (
     <>
-      <section className='purpose'>
+      <section className='purpose mouse__animation--scope'>
         <article className='puerpose__container'>
         {/* <Spline scene="https://prod.spline.design/FsmiOeWPCW5wxUkz/scene.splinecode"/> */}
-          <p className='purpose__description'>
-          "Expandiendo nuestra influencia global, nos consolidamos como la principal opción en la industria minera, mediante la exploración y desarrollo ético rentable de yacimientos"
-          </p>
-          <img className='purpose__background' src={image} alt="Proposito" />
+          <div className='purpose__description'>
+            <p>
+            "Ampliando nuestra influencia global, nos posicionamos como la opción líder en la industria minera, a través de la exploración y desarrollo ético responsable"
+            </p>
+          </div>
+          <div className='purpose__animation'>
+            <Spline scene="https://prod.spline.design/FsmiOeWPCW5wxUkz/scene.splinecode" />
+          </div>
         </article>
+        <MouseCursor></MouseCursor>
       </section>
     </>
   )

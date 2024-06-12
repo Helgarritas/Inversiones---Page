@@ -21,7 +21,7 @@ function ArticleBlog(props) {
   
   //* chance boolean Loader
   let navigate = useNavigate();
-  const showLoader = useContext(LoaderContext);
+  const {showLoader} = useContext(LoaderContext);
   const tiempoRestante = 1600; 
   
   const delayLink = (e, path) => {
@@ -29,7 +29,11 @@ function ArticleBlog(props) {
     showLoader(true);
     setTimeout(() => {
       navigate(path);
+      window.scrollTo({
+        top: 0
+      })
     }, tiempoRestante);
+
   };
 
   return (

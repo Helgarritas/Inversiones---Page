@@ -25,13 +25,11 @@
 .homeBanner__title{
     display: flex;
     flex-direction: column;
-    // gap: -20px;
     &  h1{
         @media (min-width: 360px) and (max-width: 640px) {
             font-size: 30px;
         }
     }
-
     & > :nth-child(1){
         
     }
@@ -43,7 +41,7 @@
 .homebanner__button{
     padding: 10px 40px;
     width: max-content;
-    border: 1.6px solid white;
+    border: 1.52px solid white;
     @include headline-regular(350);
     position: relative;
     transition: color ease .3s,border .4s;

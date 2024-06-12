@@ -23,13 +23,34 @@
 .inforProject__title{
     margin-top: 30px;
 }
+.infoProject__height{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    & > :nth-child(1){
+        font-size: var(--size);
+        font-weight: 500;   
+        @media (min-width: 360px) and (max-width: 640px) {
+            @include body-regular;
+            color: $content-dark-secondary;
+        }     
+    }
+    & > :nth-child(2){
+        font-size: 16px;
+        font-weight: 500;
+        @media (min-width: 360px) and (max-width: 640px) {
+            @include body-regular;
+            color: $content-dark-secondary;
+        }  
+    }
+}
 .inforProject__container{
-    padding: 50px 80px;
+    padding: 50px 80px 80px 80px;
     background: #F5F7FA;
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
-    transition: ease .4s;
+    transition:  ease .4s;
     @media (min-width: 360px) and (max-width: 640px) {
         padding: 20px 20px;
     }
@@ -68,11 +89,11 @@
     }
 }   
 .inforProject__content2{
-    margin: 90px 0;
+    margin: 80px 0;
     display: grid;
     gap: 36px;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 450px;
+    grid-template-rows: 400px;
     @media (min-width: 360px) and (max-width: 640px) {
         margin: 40px 0;
         display: flex;
@@ -87,9 +108,38 @@
         width: 100%;
     }
     & > :nth-child(2){
-        padding: 20px 0;
     }
 }
+.inforProject__cards{
+    display: grid;
+    grid-template-columns: max-content max-content ;
+    grid-template-rows: repeat(3,max-content);
+    justify-content: center;
+    row-gap: 35px;
+    column-gap: 50px;
+    @media (min-width: 360px) and (max-width: 640px) {
+        column-gap:inherit;
+    }
+}
+.inforProject__card{
+    // padding: 10px 20px;
+    border-radius: 10px;
+    // background: rgba(0,0,0,.1);
+}
+.inforProject__card--title{
+    display: flex;
+    gap: 10px;
+    & > :nth-child(1){
+        @include headline-regular(400);
+    }
+    & > :nth-child(2){
+        @include headline-regular(400);
+    }
+}
+.inforProject__card--description{
+    
+}
+
 .inforProject__content3{
 
 }
@@ -114,6 +164,7 @@
 // Idea de colocar en animacion
 .inforProject__event1{
     backdrop-filter: blur(0px);
+    transition: ease .4s;
 }
 .inforProject__event2{
     opacity: 0;

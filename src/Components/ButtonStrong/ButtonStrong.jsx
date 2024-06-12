@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const ButtonStrong = ({description,fill}) => {
   return (
     <>
-      <a className='button__primary' style={{borderColor: `${fill}`}}>
+      <a className='button__primary card__animation--opacity' style={{borderColor: `${fill}`}}>
         <span style={{color: `${fill}`}}>{description}</span>
         <div className='button__primary--icons'>
           <div className='button__primary--slider'>
