@@ -1,0 +1,15 @@
+.purpuose__title{
+    position: relative;
+}
+.purpuose__title::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    padding: 0 100px;
+    position: absolute;
+    top: 0;
+    background: #991B1B;
+    transform: skewX(45deg);
+    left: 32px;
+    z-index: -1;
+}

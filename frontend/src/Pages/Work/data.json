@@ -1,0 +1,37 @@
+[
+    {
+        "job": "Operador Jumbo",
+        "location": "lima",
+        "date": "12/12/2024",
+        "contract": "operador",
+        "filter": false
+    },
+    {
+        "job": "Operador Perforadora",
+        "location": "lima",
+        "date": "12/12/2024",
+        "contract": "operador",
+        "filter": false
+    },
+    {
+        "job": "Operador Jackleg",
+        "location": "lima",
+        "date": "12/12/2024",
+        "contract": "operador",
+        "filter": false
+    },
+    {
+        "job": "Tecnico Electricista",
+        "location": "ica",
+        "date": "12/12/2024",
+        "contract": "tecnico",
+        "filter": false
+    },
+    {
+        "job": "Técnico Geólogo",
+        "location": "ica",
+        "date": "12/12/2024",
+        "contract": "tecnico",
+        "filter": false
+    }
+]

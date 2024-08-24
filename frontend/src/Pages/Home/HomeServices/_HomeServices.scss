@@ -1,0 +1,69 @@
+.homeServices{
+    padding: 70px 100px 100px 100px;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 360px) and (max-width: 640px) {
+        padding: 70px 0 70px 32px;
+    }
+}
+.homeServices__container{
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    @media (min-width: 360px) and (max-width: 640px) {
+        gap: 40px;
+        padding: 0 32px 0 0;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        scroll-snap-type: x mandatory;
+    }
+}
+//* Card
+.homeServices__card{
+    padding: 20px 10px;
+    width: 270px;
+    aspect-ratio: 3/4;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    transition: ease .8s;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    @media (min-width: 360px) and (max-width: 640px) {
+        width: 280px;
+        height: 550px;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        transition-delay: 0s;
+    }
+    &::after{
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        transition: ease .6s;
+        background: rgba(0,0,0,0.15);
+        z-index: -1;
+    }
+}
+
+// elements image
+.homeServices__card--img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: scale ease 1.2s;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0));
+    z-index: -2;
+}

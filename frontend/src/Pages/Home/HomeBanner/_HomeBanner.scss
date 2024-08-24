@@ -1,0 +1,23 @@
+.homeBanner{
+    height: 100vh;
+    padding: 0 100px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    @media (min-width: 360px) and (max-width: 640px) {
+        padding: 0 32px;
+    }
+}
+.homeBanner__background{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; 
+    position: absolute;
+    left:0;
+    top: 0;
+    object-fit: cover;
+    transform: scaleX(-1);
+    z-index: -1;
+}

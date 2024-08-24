@@ -1,0 +1,14 @@
+.buttonSlider__action{
+    margin-left: auto;
+    padding: 35px 130px 0  0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (min-width: 360px) and (max-width: 640px) {
+        padding: 35px 32px 0  0;
+    }
+}
+.buttonSlider__buttons{
+    display: flex;
+    gap: 20px; 
+}

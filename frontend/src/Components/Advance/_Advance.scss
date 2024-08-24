@@ -1,0 +1,11 @@
+.counter{
+    margin: 0 0 60px 0;
+    padding: 70px 130px;
+    overflow: hidden;
+    position: relative;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    @media (min-width: 360px) and (max-width: 640px) {
+        padding: 70px 32px;
+    }
+}
